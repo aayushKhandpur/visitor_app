@@ -1,0 +1,182 @@
+<div class="container">
+<div class="visitor-registration-header clearfix">
+<h3 class="text-muted">VISITOR REGISTRATION</h2>
+
+</div>
+
+
+  <form role="form" name="visitorForm">
+    <div class="row" >
+      <div class="col-md-12 col-xs-12">
+
+        <h3 align="center" class="register-form-category-headings">Personal Infromfation</h3>
+
+      </div>
+    </div>
+  <div class="form-group col-lg-6 col-sm-6 col-xs-12" >
+
+    <input placeholder="First Name" type="text" class="register-form " id="name" ng-model="visitor.firstName" required />
+  </div>
+  <div class="form-group col-lg-6 col-sm-6 col-xs-12" >
+
+    <input placeholder="Last Name" type="text" class="register-form " id="name" ng-model="visitor.lastName" required />
+  </div>
+  <div class="form-group col-lg-6 col-sm-6 col-xs-12" >
+
+    <input placeholder="Email" type="email" class="register-form" id="email" ng-model="visitor.email" required />
+  </div>
+  <div class="form-group col-lg-6 col-sm-6 col-xs-12" >
+
+    <input placeholder="Phone No." type="text" class="register-form" id="phone" ng-model="visitor.phone" required />
+  </div>
+
+  <div class="form-group col-lg-6 col-sm-6 col-xs-12 " >
+
+    <input placeholder="DOB" type="datepicker" class="register-form" id="dob" ng-model="visitor.dob" />
+  </div>
+
+  <div class="form-group col-lg-6 col-sm-6 col-xs-12" >
+
+    <label class="radio-inline text-muted" style="color:#999; font-size:25px; margin-right:20px;" >
+      Gender
+    </label>
+    <label class="radio-inline text-muted" >
+      <input type="radio" name="gender" ng-model="visitor.gender" value="m">M
+    </label>
+    <label class="radio-inline text-muted">
+      <input type="radio" name="gender" ng-model="visitor.gender" value="f">F
+    </label>
+    <hr style="width:100%; margin-top:-2px;"></hr>
+  </div>
+
+  <div class="form-group col-lg-6 col-sm-6 col-xs-12" ng-model="visitor.address" >
+
+    <textarea style="height:auto !important;"  placeholder="Address"  class="register-form" id="address" rows="3"></textarea>
+
+  </div>
+  <div class="form-group col-lg-6 col-sm-6 col-xs-12" >
+    <div class="form-group col-xs-12" >
+    <input placeholder="City" type="text" class="register-form " id="city" ng-model="visitor.city"  required />
+    </div>
+    <div class="form-group col-xs-12" >
+
+      <input placeholder="state" type="text" class="register-form" id="dob" ng-model="visitor.state">
+    </div>
+    <div class="form-group col-xs-12" >
+
+      <input placeholder="pin-code" type="text" class="register-form" id="pincode" ng-model="visitor.pincode">
+    </div>
+
+  </div>
+
+
+  <div class="row" >
+    <div class="col-md-12 col-xs-12">
+    <h3 class="register-form-category-headings"> Educational Information</h3>
+    </div>
+  </div>
+  <div class="form-group col-lg-6 col-sm-6 col-xs-12" >
+
+  <select required placeholder="hello" class="register-form text-muted" style="width:100%; min-height:50px;"  ng-model="visitor.highestEducation"
+     ng-options="edu as edu for edu in eduList" ng-change="selectEducation()" >
+  <option value=""> -highest education- </option>
+  </select>
+  </div>
+  <div class="form-group col-lg-6 col-sm-6 col-xs-12" ng-show="showOther">
+
+    <input  placeholder="Other Education" type="text" class="register-form" id="other_edu" ng-model="visitor.otherEdu" {{otherRequired}}/>
+  </div>
+  <div class="form-group col-lg-6 col-sm-6 col-xs-12">
+
+    <input  placeholder="Institute Name" type="text" class="register-form" id="edu_institute"
+    ng-model="visitor.eduInstitute"  />
+  </div>
+  <div class="form-group col-lg-12 col-sm-12 col-xs-12" >
+
+    <label class="radio-inline text-muted" style="color:#999; font-size:25px; margin-right:20px;" >
+      Occupation
+    </label>
+    <label class="radio-inline text-muted" >
+      <input type="radio" name="student_occupation" ng-model="visitor.studentOccupation" value="STUDENT">STUDENT
+    </label>
+    <label class="radio-inline text-muted" >
+      <input type="radio" name="student_occupation" ng-model="visitor.studentOccupation" value="SERVICE">SERVICE
+    </label>
+    <label class="radio-inline text-muted"  >
+      <input type="radio" name="student_occupation" ng-model="visitor.studentOccupation" value="BUSINESS">BUSINESS
+    </label>
+    <label class="radio-inline text-muted" >
+      <input type="radio" name="student_occupation" ng-model="visitor.studentOccupation" value="PROFESSIONAL">PROFESSIONAL
+    </label>
+    <label class="radio-inline text-muted" >
+      <input type="radio" name="student_occupation" ng-model="visitor.studentOccupation" value="HOUSEWIFE">HOUSEWIFE
+    </label>
+    <label class="radio-inline text-muted" >
+      <input type="radio" name="student_occupation" ng-model="visitor.studentOccupation" value="OTHER">OTHER
+    </label>
+    <hr style="width:100%; margin-top:-2px;"></hr>
+  </div>
+  <div class="form-group col-lg-12 col-sm-12 col-xs-12" >
+
+    <label class="radio-inline text-muted" style="color:#999; font-size:25px; margin-right:20px;" >
+      Computer Knowledge
+    </label>
+    <label class="radio-inline text-muted" >
+      <input type="radio" name="computerKnowledge" ng-model="visitor.computerKnowledge" value="NONE">NONE
+    </label>
+    <label class="radio-inline text-muted" >
+      <input type="radio" name="computerKnowledge" ng-model="visitor.computerKnowledge" value="BASIC">BASIC
+    </label>
+    <label class="radio-inline text-muted"  >
+      <input type="radio" name="computerKnowledge" ng-model="visitor.computerKnowledge" value="ADVANCED">ADVANCED
+    </label>
+
+    <hr style="width:100%; margin-top:-2px;"></hr>
+  </div>
+  <div class="row" >
+    <div class="col-md-12 col-xs-12">
+    <h3 class="register-form-category-headings"> Parent/Guardian Information</h3>
+    </div>
+  </div>
+  <div class="form-group col-lg-6 col-sm-6 col-xs-12" >
+
+    <input placeholder="First Name" type="text" class="register-form " id="name" ng-model="visitor.guardianName" required />
+  </div>
+
+  <div class="form-group col-lg-6 col-sm-6 col-xs-12" >
+
+    <input placeholder="Email" type="email" class="register-form" id="email" ng-model="visitor.guardianEmail" required />
+  </div>
+  <div class="form-group col-lg-6 col-sm-6 col-xs-12" >
+
+    <input placeholder="Phone No." type="text" class="register-form" id="phone" ng-model="visitor.guardianPhone" required />
+  </div>
+  <div class="form-group col-lg-6 col-sm-6 col-xs-12" >
+
+    <input placeholder="Occupation" type="text" class="register-form " id="name" ng-model="visitor.guardianOccupation" />
+  </div>
+
+  <div class="row" >
+    <div class="col-md-12 col-xs-12">
+    <h3 class="register-form-category-headings"> How do you come to know about Arena?</h3>
+    </div>
+  </div>
+  <div class=" checkbox form-group col-lg-12 col-sm-12 col-xs-12" >
+
+      <label style="color:#999; font-size:22px; margin-right:20px;"><input type="checkbox" ng-model="visitor.arenaNewspaper">Newspaper</label>
+
+
+      <label style="color:#999; font-size:22px; margin-right:20px;"><input type="checkbox" value="" ng-model="visitor.arenaTV">TV</label>
+
+
+      <label style="color:#999; font-size:22px; margin-right:20px;"><input type="checkbox" value="" ng-model="visitor.arenaInternet">Internet</label>
+      <label style="color:#999; font-size:22px; margin-right:20px;"><input type="checkbox" value="" ng-model="visitor.arenaStudent">Arena Student</label>
+      <label style="color:#999; font-size:22px; margin-right:20px;"><input type="checkbox" value="" ng-model="visitor.arenaBanner">Banner Hoarding</label>
+      <label style="color:#999; font-size:22px; margin-right:20px;"><input type="checkbox" value="" ng-model="visitor.arenaFriends">Friends/Relative</label>
+
+  </div>
+
+  <button type="submit" class="btn btn-lg regiset-form-submit" ng-click="validateAndSaveVisitor(visitor)"><i class="fa fa-long-arrow-right fa-lg fa-2x"></i></button>
+  </form>
+
+</div>

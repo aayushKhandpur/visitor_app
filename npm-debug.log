@@ -1,0 +1,39 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'update',
+1 verbose cli   '-g',
+1 verbose cli   'npm' ]
+2 info using npm@3.3.6
+3 info using node@v5.0.0
+4 verbose stack Error: Argument #1: Expected string but got object
+4 verbose stack     at markDeps (/usr/local/lib/node_modules/npm/lib/install/deps.js:87:5)
+4 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:52:35
+4 verbose stack     at Array.forEach (native)
+4 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:52:11
+4 verbose stack     at Array.forEach (native)
+4 verbose stack     at asyncMap (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:51:8)
+4 verbose stack     at Array.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+4 verbose stack     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+4 verbose stack     at chain (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:20:5)
+4 verbose stack     at recalculateMetadata (/usr/local/lib/node_modules/npm/lib/install/deps.js:112:3)
+5 verbose cwd /home/aayush/projects/visitor_app
+6 error Linux 3.16.0-45-generic
+7 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "update" "-g" "npm"
+8 error node v5.0.0
+9 error npm  v3.3.6
+10 error code EINVALIDTYPE
+11 error typeerror Error: Argument #1: Expected string but got object
+11 error typeerror     at markDeps (/usr/local/lib/node_modules/npm/lib/install/deps.js:87:5)
+11 error typeerror     at /usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:52:35
+11 error typeerror     at Array.forEach (native)
+11 error typeerror     at /usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:52:11
+11 error typeerror     at Array.forEach (native)
+11 error typeerror     at asyncMap (/usr/local/lib/node_modules/npm/node_modules/slide/lib/async-map.js:51:8)
+11 error typeerror     at Array.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+11 error typeerror     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+11 error typeerror     at chain (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:20:5)
+11 error typeerror     at recalculateMetadata (/usr/local/lib/node_modules/npm/lib/install/deps.js:112:3)
+11 error typeerror This is an error with npm itself. Please report this error at:
+11 error typeerror     <http://github.com/npm/npm/issues>
+12 verbose exit [ 1, true ]
